@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		417610301367C8BE0045B9C6 /* playerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4176102F1367C8BE0045B9C6 /* playerBackground.png */; };
+		4127D46013690AD90043D3A6 /* playerBackgroundR.png in Resources */ = {isa = PBXBuildFile; fileRef = 4127D45E13690AD90043D3A6 /* playerBackgroundR.png */; };
+		4127D46113690AD90043D3A6 /* playerBackgroundL.png in Resources */ = {isa = PBXBuildFile; fileRef = 4127D45F13690AD90043D3A6 /* playerBackgroundL.png */; };
+		4127D4671369165B0043D3A6 /* Competitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4127D4661369165B0043D3A6 /* Competitor.m */; };
+		4127D46A13691EC10043D3A6 /* cardBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4127D46913691EC10043D3A6 /* cardBack.png */; };
 		41D0CEB8136356F400FCDB7B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0CEB7136356F400FCDB7B /* QuartzCore.framework */; };
 		41D0CEBA136356F400FCDB7B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0CEB9136356F400FCDB7B /* OpenGLES.framework */; };
 		41D0CEBC136356F400FCDB7B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0CEBB136356F400FCDB7B /* OpenAL.framework */; };
@@ -196,7 +199,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4176102F1367C8BE0045B9C6 /* playerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerBackground.png; sourceTree = "<group>"; };
+		4127D45E13690AD90043D3A6 /* playerBackgroundR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerBackgroundR.png; sourceTree = "<group>"; };
+		4127D45F13690AD90043D3A6 /* playerBackgroundL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerBackgroundL.png; sourceTree = "<group>"; };
+		4127D465136916490043D3A6 /* Competitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Competitor.h; path = Classes/Competitor.h; sourceTree = "<group>"; };
+		4127D4661369165B0043D3A6 /* Competitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Competitor.m; path = Classes/Competitor.m; sourceTree = "<group>"; };
+		4127D46813691A230043D3A6 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameConfig.h; path = Classes/GameConfig.h; sourceTree = "<group>"; };
+		4127D46913691EC10043D3A6 /* cardBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardBack.png; sourceTree = "<group>"; };
 		41D0CEB3136356F400FCDB7B /* FrankZooV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrankZooV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D0CEB7136356F400FCDB7B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		41D0CEB9136356F400FCDB7B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -429,7 +437,6 @@
 		41D0D013136356F700FCDB7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		41D0D015136356F700FCDB7B /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		41D0D016136356F700FCDB7B /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		41D0D01B136356F700FCDB7B /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		41D0D0231363583600FCDB7B /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConfig.h; path = Classes/AppConfig.h; sourceTree = "<group>"; };
 		41D0D0241363583600FCDB7B /* CardSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardSprite.h; path = Classes/CardSprite.h; sourceTree = "<group>"; };
 		41D0D0251363583600FCDB7B /* CardSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSprite.m; path = Classes/CardSprite.m; sourceTree = "<group>"; };
@@ -580,7 +587,7 @@
 				41D0D013136356F700FCDB7B /* AppDelegate.m */,
 				41D0D015136356F700FCDB7B /* RootViewController.h */,
 				41D0D016136356F700FCDB7B /* RootViewController.m */,
-				41D0D01B136356F700FCDB7B /* GameConfig.h */,
+				4127D46813691A230043D3A6 /* GameConfig.h */,
 				41D0CEC8136356F400FCDB7B /* Resources */,
 				41D0D00E136356F700FCDB7B /* Supporting Files */,
 				41D0D0211363570900FCDB7B /* cocos2d */,
@@ -591,7 +598,9 @@
 		41D0CEC8136356F400FCDB7B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4176102F1367C8BE0045B9C6 /* playerBackground.png */,
+				4127D46913691EC10043D3A6 /* cardBack.png */,
+				4127D45E13690AD90043D3A6 /* playerBackgroundR.png */,
+				4127D45F13690AD90043D3A6 /* playerBackgroundL.png */,
 				41D0D0731363593500FCDB7B /* AI.png */,
 				41D0D0741363593500FCDB7B /* BtnAdvance.png */,
 				41D0D0751363593500FCDB7B /* BtnAdvanceSel.png */,
@@ -940,14 +949,13 @@
 				41D0D03F1363583600FCDB7B /* GamePlayingSceneIpad.h */,
 				41D0D0401363583600FCDB7B /* GamePlayingSceneIpad.m */,
 				41D0D0E3136361B800FCDB7B /* GamePlayingScene */,
-				41D0D0451363583600FCDB7B /* MainMenuScene.h */,
-				41D0D0461363583600FCDB7B /* MainMenuScene.m */,
 				41D0D04B1363583600FCDB7B /* SingleGameOptionScene.h */,
 				41D0D04C1363583600FCDB7B /* SingleGameOptionScene.m */,
+				41F1F2541368054200BC57C7 /* OptionSceneElement */,
 				41D0D04D1363583600FCDB7B /* SplashScene.h */,
 				41D0D04E1363583600FCDB7B /* SplashScene.m */,
-				41D0D0261363583600FCDB7B /* CCRadioMenu.h */,
-				41D0D0271363583600FCDB7B /* CCRadioMenu.m */,
+				41D0D0451363583600FCDB7B /* MainMenuScene.h */,
+				41D0D0461363583600FCDB7B /* MainMenuScene.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -975,6 +983,8 @@
 		41D0D0E3136361B800FCDB7B /* GamePlayingScene */ = {
 			isa = PBXGroup;
 			children = (
+				4127D465136916490043D3A6 /* Competitor.h */,
+				4127D4661369165B0043D3A6 /* Competitor.m */,
 				41D0D0491363583600FCDB7B /* ResultLayer.h */,
 				41D0D04A1363583600FCDB7B /* ResultLayer.m */,
 				41D0D03D1363583600FCDB7B /* GameMenuLayer.h */,
@@ -985,6 +995,15 @@
 				41D0D0251363583600FCDB7B /* CardSprite.m */,
 			);
 			name = GamePlayingScene;
+			sourceTree = "<group>";
+		};
+		41F1F2541368054200BC57C7 /* OptionSceneElement */ = {
+			isa = PBXGroup;
+			children = (
+				41D0D0261363583600FCDB7B /* CCRadioMenu.h */,
+				41D0D0271363583600FCDB7B /* CCRadioMenu.m */,
+			);
+			name = OptionSceneElement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1102,7 +1121,9 @@
 				41D0D0E01363593500FCDB7B /* UICompetitorBg.png in Resources */,
 				41D0D0E11363593500FCDB7B /* whale_s.png in Resources */,
 				41D0D0E21363593500FCDB7B /* Whale.png in Resources */,
-				417610301367C8BE0045B9C6 /* playerBackground.png in Resources */,
+				4127D46013690AD90043D3A6 /* playerBackgroundR.png in Resources */,
+				4127D46113690AD90043D3A6 /* playerBackgroundL.png in Resources */,
+				4127D46A13691EC10043D3A6 /* cardBack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,6 +1246,7 @@
 				41D0D0641363583600FCDB7B /* SingleGameOptionScene.m in Sources */,
 				41D0D0651363583600FCDB7B /* SplashScene.m in Sources */,
 				41D0D0661363583600FCDB7B /* UICompetitor.m in Sources */,
+				4127D4671369165B0043D3A6 /* Competitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
