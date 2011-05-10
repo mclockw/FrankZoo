@@ -11,6 +11,14 @@
 		4127D46113690AD90043D3A6 /* playerBackgroundL.png in Resources */ = {isa = PBXBuildFile; fileRef = 4127D45F13690AD90043D3A6 /* playerBackgroundL.png */; };
 		4127D4671369165B0043D3A6 /* Competitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4127D4661369165B0043D3A6 /* Competitor.m */; };
 		4127D46A13691EC10043D3A6 /* cardBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4127D46913691EC10043D3A6 /* cardBack.png */; };
+		412817ED1377116700F31A79 /* FZSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 412817EC1377116700F31A79 /* FZSessionManager.m */; };
+		4131C12E13740E6400537827 /* FZServerSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 4131C12D13740E6400537827 /* FZServerSession.m */; };
+		4137EFE11373F449002C827D /* ClientLobbyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4137EFE01373F449002C827D /* ClientLobbyScene.m */; };
+		41447824136FECA800673148 /* MultiplayerScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 41447823136FECA800673148 /* MultiplayerScene.m */; };
+		4144782D137010E900673148 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4144782C137010E900673148 /* GameCenterManager.m */; };
+		414478481370209F00673148 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414478471370209E00673148 /* GameKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		416EC3CC1374F9BE002E8955 /* CCUIViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 416EC3CB1374F9BE002E8955 /* CCUIViewWrapper.m */; };
+		41B5013E1372E2AA0099E4F6 /* ServerLobbyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B5013D1372E2AA0099E4F6 /* ServerLobbyScene.m */; };
 		41D0CEB8136356F400FCDB7B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0CEB7136356F400FCDB7B /* QuartzCore.framework */; };
 		41D0CEBA136356F400FCDB7B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0CEB9136356F400FCDB7B /* OpenGLES.framework */; };
 		41D0CEBC136356F400FCDB7B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D0CEBB136356F400FCDB7B /* OpenAL.framework */; };
@@ -205,6 +213,21 @@
 		4127D4661369165B0043D3A6 /* Competitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Competitor.m; path = Classes/Competitor.m; sourceTree = "<group>"; };
 		4127D46813691A230043D3A6 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameConfig.h; path = Classes/GameConfig.h; sourceTree = "<group>"; };
 		4127D46913691EC10043D3A6 /* cardBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardBack.png; sourceTree = "<group>"; };
+		412817EB1377116600F31A79 /* FZSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZSessionManager.h; path = Classes/FZSessionManager.h; sourceTree = "<group>"; };
+		412817EC1377116700F31A79 /* FZSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZSessionManager.m; path = Classes/FZSessionManager.m; sourceTree = "<group>"; };
+		4131C12C13740E6400537827 /* FZServerSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZServerSession.h; sourceTree = "<group>"; };
+		4131C12D13740E6400537827 /* FZServerSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZServerSession.m; sourceTree = "<group>"; };
+		4137EFDF1373F448002C827D /* ClientLobbyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClientLobbyScene.h; path = Classes/ClientLobbyScene.h; sourceTree = "<group>"; };
+		4137EFE01373F449002C827D /* ClientLobbyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClientLobbyScene.m; path = Classes/ClientLobbyScene.m; sourceTree = "<group>"; };
+		41447822136FECA800673148 /* MultiplayerScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiplayerScene.h; path = Classes/MultiplayerScene.h; sourceTree = "<group>"; };
+		41447823136FECA800673148 /* MultiplayerScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultiplayerScene.m; path = Classes/MultiplayerScene.m; sourceTree = "<group>"; };
+		4144782B137010E900673148 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameCenterManager.h; path = Classes/GameCenterManager.h; sourceTree = "<group>"; };
+		4144782C137010E900673148 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameCenterManager.m; path = Classes/GameCenterManager.m; sourceTree = "<group>"; };
+		414478471370209E00673148 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		416EC3CA1374F9BE002E8955 /* CCUIViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUIViewWrapper.h; path = Classes/CCUIViewWrapper.h; sourceTree = "<group>"; };
+		416EC3CB1374F9BE002E8955 /* CCUIViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCUIViewWrapper.m; path = Classes/CCUIViewWrapper.m; sourceTree = "<group>"; };
+		41B5013C1372E2A90099E4F6 /* ServerLobbyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerLobbyScene.h; path = Classes/ServerLobbyScene.h; sourceTree = "<group>"; };
+		41B5013D1372E2AA0099E4F6 /* ServerLobbyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerLobbyScene.m; path = Classes/ServerLobbyScene.m; sourceTree = "<group>"; };
 		41D0CEB3136356F400FCDB7B /* FrankZooV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrankZooV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D0CEB7136356F400FCDB7B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		41D0CEB9136356F400FCDB7B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -532,6 +555,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				414478481370209F00673148 /* GameKit.framework in Frameworks */,
 				41D0CEB8136356F400FCDB7B /* QuartzCore.framework in Frameworks */,
 				41D0CEBA136356F400FCDB7B /* OpenGLES.framework in Frameworks */,
 				41D0CEBC136356F400FCDB7B /* OpenAL.framework in Frameworks */,
@@ -546,6 +570,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4131C13C137415E600537827 /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				4144782B137010E900673148 /* GameCenterManager.h */,
+				4144782C137010E900673148 /* GameCenterManager.m */,
+			);
+			name = Reference;
+			sourceTree = "<group>";
+		};
+		41447820136FE26C00673148 /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				412817EB1377116600F31A79 /* FZSessionManager.h */,
+				412817EC1377116700F31A79 /* FZSessionManager.m */,
+				41B5013C1372E2A90099E4F6 /* ServerLobbyScene.h */,
+				41B5013D1372E2AA0099E4F6 /* ServerLobbyScene.m */,
+				4137EFDF1373F448002C827D /* ClientLobbyScene.h */,
+				4137EFE01373F449002C827D /* ClientLobbyScene.m */,
+				41447822136FECA800673148 /* MultiplayerScene.h */,
+				41447823136FECA800673148 /* MultiplayerScene.m */,
+				416EC3C81374F970002E8955 /* UI */,
+				4131C12C13740E6400537827 /* FZServerSession.h */,
+				4131C12D13740E6400537827 /* FZServerSession.m */,
+				4131C13C137415E600537827 /* Reference */,
+			);
+			name = Multiplayer;
+			sourceTree = "<group>";
+		};
+		416EC3C81374F970002E8955 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				416EC3CA1374F9BE002E8955 /* CCUIViewWrapper.h */,
+				416EC3CB1374F9BE002E8955 /* CCUIViewWrapper.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		41D0CEA8136356F400FCDB7B = {
 			isa = PBXGroup;
 			children = (
@@ -566,6 +627,7 @@
 		41D0CEB6136356F400FCDB7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				414478471370209E00673148 /* GameKit.framework */,
 				41D0CEB7136356F400FCDB7B /* QuartzCore.framework */,
 				41D0CEB9136356F400FCDB7B /* OpenGLES.framework */,
 				41D0CEBB136356F400FCDB7B /* OpenAL.framework */,
@@ -937,6 +999,7 @@
 		41D0D0221363581D00FCDB7B /* FrankZoo */ = {
 			isa = PBXGroup;
 			children = (
+				41447820136FE26C00673148 /* Multiplayer */,
 				41D0D0711363585F00FCDB7B /* UI */,
 				41D0D0721363588500FCDB7B /* GameLogic */,
 			);
@@ -963,6 +1026,8 @@
 		41D0D0721363588500FCDB7B /* GameLogic */ = {
 			isa = PBXGroup;
 			children = (
+				41D0D0351363583600FCDB7B /* FZGameLogic.h */,
+				41D0D0361363583600FCDB7B /* FZGameLogic.m */,
 				41D0D02C1363583600FCDB7B /* FZAI.h */,
 				41D0D02D1363583600FCDB7B /* FZAI.m */,
 				41D0D02E1363583600FCDB7B /* FZCard.h */,
@@ -972,8 +1037,6 @@
 				41D0D0321363583600FCDB7B /* FZGameConfig.m */,
 				41D0D0331363583600FCDB7B /* FZGameDeck.h */,
 				41D0D0341363583600FCDB7B /* FZGameDeck.m */,
-				41D0D0351363583600FCDB7B /* FZGameLogic.h */,
-				41D0D0361363583600FCDB7B /* FZGameLogic.m */,
 				41D0D0371363583600FCDB7B /* FZPlayer.h */,
 				41D0D0381363583600FCDB7B /* FZPlayer.m */,
 			);
@@ -1247,6 +1310,13 @@
 				41D0D0651363583600FCDB7B /* SplashScene.m in Sources */,
 				41D0D0661363583600FCDB7B /* UICompetitor.m in Sources */,
 				4127D4671369165B0043D3A6 /* Competitor.m in Sources */,
+				41447824136FECA800673148 /* MultiplayerScene.m in Sources */,
+				4144782D137010E900673148 /* GameCenterManager.m in Sources */,
+				41B5013E1372E2AA0099E4F6 /* ServerLobbyScene.m in Sources */,
+				4137EFE11373F449002C827D /* ClientLobbyScene.m in Sources */,
+				4131C12E13740E6400537827 /* FZServerSession.m in Sources */,
+				416EC3CC1374F9BE002E8955 /* CCUIViewWrapper.m in Sources */,
+				412817ED1377116700F31A79 /* FZSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
