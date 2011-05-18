@@ -34,7 +34,7 @@
       gkSession_.available = YES;
       gkSession_.delegate = self;
       [gkSession_ setDataReceiveHandler:self withContext:nil];
-    
+      serverLobbyDelegate_ = delegate;
     }else if(type_ == Client){
       gkSession_ = [[GKSession alloc] initWithSessionID:SESSION_ID displayName:nil sessionMode:GKSessionModeClient];
       gkSession_.available = YES;
@@ -111,8 +111,8 @@
   }
 
   
-  NSString *aStr = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-  NSLog(@"%@", aStr);
+//  NSString *aStr = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+//  NSLog(@"%@", aStr);
 }
 
 
@@ -136,7 +136,7 @@
       currentPalyer_++;
       NSLog(@"connect: %@:%@", peerID, [self displayNameForPeer:peerID]);
     }
-    
+    [serverLobbyDelegate_ recieveConnect:self];
     [self sendPlayerIndexToPeer: peerID withPlayerIndex: currentPalyer_];
   }
   else{
@@ -191,6 +191,9 @@
 			break;				
 		case GKPeerStateDisconnected:
       // The call ended either manually or due to failure somewhere.
+//      if (Ingame) {
+//    
+//      }
       [self disconnectCurrentCall];
       [serverPeerList_ removeObject:peerID]; 
       [clientLobbyDelegate_ serverListDidChange:self];

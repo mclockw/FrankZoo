@@ -19,7 +19,9 @@ typedef enum{
   FZPacketHeaderGameStart,  //server => client follow by PlayerIndex, 
   FZPacketHeaderReady,      //client => server
   FZPacketHeaderPlayerIndex,
-  FZPacketHeaderAction
+  FZPacketHeaderAction,
+  FZPacketHeaderRoundStartNewGame,
+  FZPacketHeaderRoundStartInfo
 }FZPacketHeader;
 
 typedef enum {
@@ -31,6 +33,10 @@ typedef enum {
 @protocol ClientLobbyDelegate
 - (void)startGameWithSessionManager:(FZSessionManager*)session;
 - (void)serverListDidChange:(FZSessionManager *)session;
+@end
+
+@protocol ServerLobbyDelegate
+- (void)recieveConnect:(FZSessionManager*)session;
 @end
 
 @protocol GameDelegate
@@ -45,6 +51,8 @@ typedef enum {
   int currentPalyer_;
   
   id<ClientLobbyDelegate> clientLobbyDelegate_;
+  id<ServerLobbyDelegate> serverLobbyDelegate_;
+  
   id<GameDelegate> gameDelegate_;
   
   int playerIndex_;

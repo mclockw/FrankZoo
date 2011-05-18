@@ -16,10 +16,8 @@
 @end
 
 
-@interface ClientLobbyLayer : CCLayer<GKSessionDelegate> {
-  GKSession *gkSession_;
-  
-  //UITableView *tableView_;
+@interface ClientLobbyLayer : CCLayer<ClientLobbyDelegate, UITableViewDataSource> {
+    
   CCMenu *menu_;
   CCLabelTTF *menuItem_;
   
@@ -28,6 +26,8 @@
   
   FZSessionManager *sessionManager_;
 
+  
+  UITableView *tableView_;
   
 }
 - (void)clickMenuConnect:(id) sender;

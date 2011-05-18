@@ -27,13 +27,6 @@
 
 
 @implementation ClientLobbyLayer
-
-- (void)dealloc{
-  [gkSession_ release];
-  //[tableView_ release];
-  [super dealloc];
-}
-
 - (id)init{
   [super init];
   if (self) {
@@ -46,6 +39,15 @@
     [menu_ alignItemsVertically];
     [self addChild:menu_];
     
+    tableView_ = [[[UITableView alloc] init] autorelease];
+    tableView_.dataSource = self;
+    CCUIViewWrapper *wrapper = [CCUIViewWrapper wrapperForUIView:tableView_];
+    wrapper.contentSize = CGSizeMake(300, 400);
+    wrapper.rotation = 90;
+    /* table view 并不知道屏幕横过来的消息， 它是以竖屏幕，左下角为ccp(0,0) */
+    /* 同时，它的AncherPoint又是以屏幕中心来转的，所以位置比较难调  */
+    wrapper.position = ccp(50, 800);
+    [self addChild:wrapper];
     
     sessionManager_ = [[FZSessionManager alloc] initWithType:Client lobbyDelegate:self];
     
@@ -70,35 +72,77 @@
   if ([session.serverPeerList_ count] > 0 ) {
     serverPeerId_ = [session.serverPeerList_ objectAtIndex:0];  
   }
+  
+  [tableView_ reloadData];
 }
 
 - (void)startGameWithSessionManager:(FZSessionManager*)session{
   FZGameConfig *config = [[FZGameConfig alloc] init];
   config.gameMode_ = FZGameModeMultiPlayerClient;
+  config.sm_ = [sessionManager_ retain];
   
   config.localPlayerIndex_ = 2;
   
   FZPlayer* player0 = [[FZPlayer alloc] init];
   player0.playerControlType_ = FZPlayer_ControlType_RemotPlayer;
+  player0.peerId_ = serverPeerId_;
   [config.players_ addObject:player0];
   
   FZPlayer* player1 = [[FZPlayer alloc] init];
   player1.playerControlType_ = FZPlayer_ControlType_RemotPlayer;
+  player1.peerId_ = serverPeerId_;
   [config.players_ addObject:player1];
   
   FZPlayer* localPlayer = [[FZPlayer alloc] init];
   localPlayer.playerControlType_ = FZPlayer_ControlType_LocalPlayer;
+
   [config.players_ addObject:localPlayer];
   
   FZPlayer* player3 = [[FZPlayer alloc] init];
   player3.playerControlType_ = FZPlayer_ControlType_RemotPlayer;
+  player3.peerId_ = serverPeerId_;
   [config.players_ addObject:player3];
   
   GamePlayingSceneIpad *scene = [[GamePlayingSceneIpad alloc] initWithGameConfig: config]; 
   [[CCDirector sharedDirector]replaceScene:scene];
   [scene release];
+  [config release];
   
 }
+
+
+#pragma mark -------------------------------------------------------------------
+#pragma mark Table View Datasource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+  return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+  return [sessionManager_.serverPeerList_ count];
+}
+
+- (void)recieveConnect:(FZSessionManager*)session{
+  [tableView_ reloadData];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  static NSString *kSourceCellID = @"SourceCellID";
+  
+  UITableViewCell *cell = [tableView_ dequeueReusableCellWithIdentifier:kSourceCellID];
+  if (cell == nil)
+  {
+    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSourceCellID] autorelease];
+  }
+  
+  cell.textLabel.text = [sessionManager_ displayNameForPeer:
+                         
+                         [sessionManager_.serverPeerList_ objectAtIndex:indexPath.row]];
+  
+  return cell;
+  
+}
+
+
 
 //#pragma mark -
 //#pragma mark GKSession Recieve Data Handle

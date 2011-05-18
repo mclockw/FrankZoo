@@ -15,11 +15,13 @@
 @end
 
 
-@interface ServerLobbyLayer : CCLayer {
-  FZSessionManager *serverSession_;
+@interface ServerLobbyLayer : CCLayer<UITableViewDataSource, ServerLobbyDelegate> {
+  FZSessionManager *sessionManager_;
+  
+  UITableView *tableView_;
   
 }
 
 - (void)clickMenuStartGame:(id) sender;
-  
+- (void)clickMenuBack:(id) sender;
 @end
