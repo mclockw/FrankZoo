@@ -501,7 +501,11 @@
 }
 
 #pragma mark CCNode Draw
+-(void) beforeDraw
+{}
 
+-(void) afterDraw
+{}
 -(void) draw
 {
 	// override me
@@ -523,6 +527,9 @@
 	}
 
 	[self transform];
+  
+  [self beforeDraw];//add by mclockw
+
 	
 	if(children_) {
 		ccArray *arrayData = children_->data;
@@ -549,6 +556,9 @@
 	} else
 		[self draw];
 	
+  
+  [self afterDraw]; //add by mclockw
+  
 	if ( grid_ && grid_.active)
 		[grid_ afterDraw:self];
 	
