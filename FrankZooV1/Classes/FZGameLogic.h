@@ -13,50 +13,47 @@
 #import "FZPlayer.h"
 
 typedef enum{
-  FZGameStatus_StartNewGame = 0,
-  FZGameStatus_WaitGameStarting,
-  FZGameStatus_StartNewRound,
-  FZgameStatus_Pause,
-  FZGameStatus_WaitingRoundStarting,
-  FZGameStatus_WaitPlayerAction,
-  FZGameStatus_WaitGameResult,
-  FZGameStatus_WaitUpdateUI,
-  FZGameStatus_PlayerDoingAction,
-  FZGameStatus_PlayerDoneAction,
-  FZGameStatus_RoundOver,
-  FZGameStatus_GameOver
+    FZGameStatus_StartNewGame = 0,
+    FZGameStatus_WaitGameStarting,
+    FZGameStatus_StartNewRound,
+    FZGameStatus_WaitingDealCards,
+    FZgameStatus_Pause,
+    FZGameStatus_WaitingRoundStarting,
+    FZGameStatus_WaitPlayerAction,
+    FZGameStatus_WaitGameResult,
+    FZGameStatus_WaitUpdateUI,
+    FZGameStatus_PlayerDoingAction,
+    FZGameStatus_PlayerDoneAction,
+    FZGameStatus_RoundOver,
+    FZGameStatus_GameOver
 }FZGameStatus;
 
-typedef enum{
-  FZGameAction_PlayCard = 0,
-  FZGameAction_Pass
-}FZGameAction;
-
-@interface FZGameLogic : NSObject {
-  FZGameConfig *gameConfig_;
-  
-  FZGameMode gameMode_;
-  FZGameDeck *gameDeck_;
-  
-  NSMutableArray * playerArray_;
-  FZPlayer *localPlayer_;
-
-  FZGameStatus gameStatus_;
-  int playerNum_;
-  int currentPlayerIndex_; 
-  int passCount_; //pass计数，用来判断何时把桌面上的牌翻掉
-  int score_; //当前玩家结束时可以获得的分数
-  int currentRound_;
-  
-  int currentPlayerNum_; //当前手上还有牌的玩家数
-  
-  int specialPassFlag_; //默认为0 当有玩家正好出完时候为1
-  
-  FZCards *currentTipsCards;
-  
-  id uiDelegate_;
-  
-  FZSessionManager *sm_;
+@interface FZGameLogic : NSObject <GameSessionDelegate> {
+    FZGameConfig *gameConfig_;
+    
+    FZGameMode gameMode_;
+    FZGameDeck *gameDeck_;
+    
+    NSMutableArray * playerArray_;
+    FZPlayer *localPlayer_;
+    
+    FZGameStatus gameStatus_;
+    int playerNum_;
+    int currentPlayerIndex_; 
+    int nextPlayerIndex_;
+    int passCount_; //pass计数，用来判断何时把桌面上的牌翻掉
+    int score_; //当前玩家结束时可以获得的分数
+    int currentRound_;
+    
+    int currentPlayerNum_; //当前手上还有牌的玩家数
+    
+    int specialPassFlag_; //默认为0 当有玩家正好出完时候为1
+    
+    FZCards *currentTipsCards;
+    
+    id uiDelegate_;
+    
+    FZSessionManager *sm_;
 }
 
 @property(nonatomic, retain) NSMutableArray *playerArray_;
@@ -75,7 +72,10 @@ typedef enum{
 - (void)startNewGame;
 - (void)startNewRound;
 - (void)gameLoop;
+
 - (void)playerDoAction:(FZGameAction)action play:(FZCards*)cards;
+- (void)player:(FZPlayer *)player doAction:(FZGameAction)action play:(FZCards*)cards;
+- (void)playerIndex:(int)playerIndex doAction:(FZGameAction)action play:(FZCards*)cards;
 
 - (void)initNewGame;
 - (void)initNewRound;
@@ -89,7 +89,6 @@ typedef enum{
 
 
 /* 游戏信息 */
-- (FZPlayer*)getLocalPlayer;
 - (NSArray*)getLocalPlayerCards;
 - (FZCards*)getCurrentDeskCards;
 
@@ -114,16 +113,6 @@ typedef enum{
 /* UI Action */
 - (BOOL)localPlayerClickPlayButton; //called by UI 
 - (BOOL)localPlayerClickPassButton;
-
-/* -------------------- MultiPlayer -------------------- */
-/* Server */
-- (void)sendToAllClientMyAction:(FZGameAction)action withCards:(FZCards*)cards;
-- (void)forwardActionToAllClint:(NSData*)data;
-/* Client */
-- (void)sendToServerMyAction:(FZGameAction)action withCards:(FZCards*)cards;
-/* helper */
-- (NSData*)buildPacketWithAction:(FZGameAction)action withCards:(FZCards*)cards;
-
 
 @end
 

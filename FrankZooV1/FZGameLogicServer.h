@@ -20,9 +20,4 @@
     
 }
 
-
-- (void)sendRemotePlayer:(NSString*)peerId withCards:(NSArray*)cardArray firstPlayerIndex:(int)playerIndex;
-
-- (void)sendAllClientInitNewGame;
-
 @end

@@ -18,39 +18,43 @@ typedef enum{
 @class FZGameLogic;
 
 @interface FZPlayer : NSObject {
-  FZPlayer_ControlType playerControlType_;
-  
-  int playIndex_;
-  NSString *playerName_;
-  
-  int roundScore_;
-  int gameScore_;
-  
-  NSMutableArray *cardInHandArray_;
-  FZCards *lastHand_;
-  
-  NSString *peerId_;
-
-  
+    FZPlayer_ControlType playerControlType_;
+    
+    int playIndex_;
+    NSString *playerName_;
+    
+    int roundScore_;
+    int gameScore_;
+    
+    NSMutableArray *cardInHandArray;
+    // if the player is a remote player, use count only
+    int cardCountInHand;
+    FZCards *lastHand_;
+    
+    /**** multiplayer ****/
+    NSString *peerId_;
+    BOOL ready;
+    
 @private
-  FZGameLogic *gameLogic_;
-  
-  NSMutableArray *moveList_;
-  
-  int tipIndex_;
+    FZGameLogic *gameLogic_;
+    
+    NSMutableArray *moveList_;
+    
+    int tipIndex_;
 }
 
 @property(nonatomic) FZPlayer_ControlType playerControlType_;
-@property(nonatomic) int playIndex_;
+@property(nonatomic) int playIndex;
 
 @property(nonatomic) int roundScore_;
 @property(nonatomic) int gameScore_;
 
-@property(nonatomic, retain) NSMutableArray *cardInHandArray_;
+@property(nonatomic, assign) int cardCountInHand;
 @property(nonatomic, retain)  NSString *playerName_;
 @property(nonatomic, retain) FZCards *lastHand_;
 
 @property(nonatomic, retain) NSString *peerId_;
+@property(nonatomic, assign) BOOL ready;
 
 @property(nonatomic, retain) FZGameLogic *gameLogic_;
 
@@ -69,9 +73,9 @@ typedef enum{
 - (void)playCards:(FZCards*)cards;
 - (void)addCard:(FZCard*)card;
 - (void)removeAllCard;
-
+- (void)setCards:(NSArray *)cards;
+- (NSArray *)cardsInHand;
 - (void)sortCardsInHand;
-- (int)getRemainCardsCount;
 
 
 

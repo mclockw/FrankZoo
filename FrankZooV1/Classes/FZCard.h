@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CardSprite.h"
+
 typedef enum {
   FZCardType_Joker = 0,
   FZCardType_Mosquito = 1,//蚊子
@@ -47,12 +49,14 @@ typedef enum {
 @property (nonatomic) int outranked_;
 @property (nonatomic) int toPlayFlag;
 
++ (id)cardWithCardType:(FZCardType)cardType;
 -(id) initWithCardType:(FZCardType)cardType;
 -(bool) canBeOutrankedBy:(FZCard*)card;
 -(bool) canOutrank:(FZCard*)card;
 -(bool) canBeOutrankedByCardType:(FZCardType)cardType;
 -(bool) canOutrankCardType:(FZCardType)cardType;
 -(NSString *) getCardName;
+- (CardSprite*)buildCardSprite;
 @end
 
 
@@ -70,6 +74,14 @@ typedef enum {
 @property (nonatomic) bool jokeFlag_;
 @property (nonatomic) bool mosquitoFlag_;
 
++(id) cardsWithCardsType:(FZCardType)cardsType CardsNum:(int)cardsNum; 
++(id) cardsWithCardsTypeA:(FZCardType)cardsTypeA CardsNumA:(int)cardsNumA  
+                   TypeB:(FZCardType)cardsTypeB CardsNumB:(int)cardsNumB; 
++(id) cardsWithCardsTypeA:(FZCardType)cardsTypeA CardsNumA:(int)cardsNumA  
+                   TypeB:(FZCardType)cardsTypeB CardsNumB:(int)cardsNumB
+                   TypeC:(FZCardType)cardsTypeC CardsNumC:(int)cardsNumC;
++(id) cardsWithCardArray:(NSArray*)cardArray;
+
 -(int) getCardsCount;
 -(id) initWithCardsType:(FZCardType)cardsType CardsNum:(int)cardsNum; 
 -(id) initWithCardsTypeA:(FZCardType)cardsTypeA CardsNumA:(int)cardsNumA  
@@ -84,6 +96,7 @@ typedef enum {
 +(BOOL) canBeAHandOfCards:(NSArray*)cardArray;
 
 -(NSString *) getCardsName;
+
 @end
 
 
