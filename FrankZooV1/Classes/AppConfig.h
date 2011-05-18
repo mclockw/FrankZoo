@@ -28,7 +28,7 @@
 /* ************************************************************************** */
 typedef struct tagAppConfig
 {
-  int iIsIPad;
+  int isIPad;
   
   int iSingleGameMode;  // 1:basic 2:advanced
   int iAiLevel;           // 1:easy 2:nomal 3:hard

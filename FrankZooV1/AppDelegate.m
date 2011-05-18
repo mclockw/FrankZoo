@@ -83,11 +83,12 @@
 	// By default, this template only supports Landscape orientations.
 	// Edit the RootViewController.m file to edit the supported orientations.
 	//
-#if GAME_AUTOROTATION == kGameAutorotationUIViewController
-	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
-#else
-	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
-#endif
+    
+//#if GAME_AUTOROTATION == kGameAutorotationUIViewController
+//	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
+//#else
+//	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
+//#endif
 	
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
